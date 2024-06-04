@@ -17,11 +17,13 @@
             <a href="/" {% if request.path == "/" %}class="active"{% endif %}>Home</a>
             <a href="/posts" {% if request.path == "/posts/" %}class="active"{% endif %}>Posts</a>
             <a href="/about" {% if request.path == "/about/" %}class="active"{% endif %}>About</a>
+            <a href="/admin" {% if request.path == "/admin/" %}class="active"{% endif %}>Admin</a>
         </nav>
     <main>
         {% block content %}
         {% endblock %}
     </main>
+    <br><br>
     <footer>
         {% comment %} show the current year {% endcomment %}
         <p>&copy; {% now "Y" %}</p>

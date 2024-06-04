@@ -36,7 +36,6 @@ nav a.active {
     color: #ffbf00;
 }
 
-
 main {
     padding: 1rem;
     flex-grow: 1;
@@ -66,5 +65,4 @@ footer {
     bottom: 0;
     width: 100%;
     z-index: 100;
-
 }

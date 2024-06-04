@@ -1,7 +1,22 @@
 {% extends "layout.html" %}
 
 {% block title %}Posts{% endblock %}
+{% load static %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/post.css' %}">
 <h1>Create new post <a href="/new">create</a></h1>
+
+{% for post in posts %}
+    <article>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.body }}</p>
+        <p><small>{{ post.date }}</small></p>
+        <div class="actions">
+            <a type='button'
+                href="{% url 'post_detail' post.slug %}"
+            >Read more</a>
+        </div>
+    </article>
+{% endfor %}
 {% endblock %}
