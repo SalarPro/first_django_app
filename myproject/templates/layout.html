@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            SP Site
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+</head>
+<body>
+        <nav>
+            <a href="/" {% if request.path == "/" %}class="active"{% endif %}>Home</a>
+            <a href="/posts" {% if request.path == "/posts/" %}class="active"{% endif %}>Posts</a>
+            <a href="/about" {% if request.path == "/about/" %}class="active"{% endif %}>About</a>
+        </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        {% comment %} show the current year {% endcomment %}
+        <p>&copy; {% now "Y" %}</p>
+    </footer>
+    
+</body>
+</html>
