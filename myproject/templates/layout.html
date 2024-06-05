@@ -17,6 +17,7 @@
             <a href="/" {% if request.path == "/" %}class="active"{% endif %}>Home</a>
             <a href="/posts" {% if request.path == "/posts/" %}class="active"{% endif %}>Posts</a>
             <a href="/about" {% if request.path == "/about/" %}class="active"{% endif %}>About</a>
+            <a href="{% url 'users:register' %}" {% if request.path == "/register/" %}class="active"{% endif %}>Register</a>
             <a href="/admin" {% if request.path == "/admin/" %}class="active"{% endif %}>Admin</a>
         </nav>
     <main>

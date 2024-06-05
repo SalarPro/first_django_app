@@ -9,14 +9,13 @@
 
 {% for post in posts %}
     <article>
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.body }}</p>
+        <h2><a href="{% url 'posts:details' post.slug %}">{{ post.title }}</a></h2>
+        {% comment %} post.banner {% endcomment %}
+        <img src="{{ post.banner.url }}" alt="{{ post.title }}" style="height: 12rem;">
+        <p
+            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+        >{{ post.body }}</p>
         <p><small>{{ post.date }}</small></p>
-        <div class="actions">
-            <a type='button'
-                href="{% url 'post_detail' post.slug %}"
-            >Read more</a>
-        </div>
     </article>
 {% endfor %}
 {% endblock %}

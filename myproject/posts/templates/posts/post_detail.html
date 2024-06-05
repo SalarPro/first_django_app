@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block title %}Post{% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
 {% load static %}
 
 {% block content %}
@@ -8,7 +8,8 @@
 
 <article>
     <h2>{{ post.title }}</h2>
-    <p>{{ post.body }}</p>
+    <img src="{{ post.banner.url }}" alt="{{ post.title }}" style="height: 20rem; overflow: hidden; max-width: 100%;">
+    <p>{{ post.body|safe }}</p>
     <p><small>{{ post.date }}</small></p>
 </article>
 
